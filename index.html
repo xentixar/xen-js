@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XenJs Demo</title>
+    <link rel="stylesheet" href="/css/min.css">
+</head>
+
+<body>
+
+    <div id="dropzone">
+        <div class="box1 box" xen-drag="true">Draggable</div>
+        <div class="box2 box" xen-drag="true">Draggable</div>
+        <br>
+        <div xen-if="posts" class="box2 box">Variable exists</div>
+        <div xen-else class="box1 box">Variable doesn't exists</div>
+        <br>
+        <div xen-fetch="https://jsonplaceholder.typicode.com/posts/1"></div>
+        <br>
+        <div xen-if="posts" xen-drag="true" class="box2 box">Box with right condition and draggable</div>
+        <!-- <div xen-else xen-drag="true" class="box1 box">Box with wrong condition and draggable</div> -->
+        <br>
+    </div>
+
+    <script>
+        // To declare a variable
+        window.posts = [
+            {
+                name: "Hello world",
+                slug: "hello-world"
+            }
+        ]
+    </script>
+    <script type="module" src="/js/xen.js"></script>
+</body>
+
+</html>
